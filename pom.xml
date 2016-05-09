@@ -63,7 +63,7 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.5</version>
@@ -74,8 +74,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
+            </plugin-->
+            <!--plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>sql-maven-plugin</artifactId>
                 <version>1.5</version>
@@ -105,7 +105,15 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${project.build.directory}/mvn-repo</url>
+        </repository>
+    </distributionManagement>
 </project>
